@@ -2,949 +2,286 @@
 import { ref, computed } from 'vue'
 import YouTube from 'vue3-youtube'
 
-const archetypeCounts = ref([
+const biotypeCounts = ref([
   {
     id: 0,
-    archetype: 'Governante',
-    text: 'Ordem, controle, segurança, responsabilidade, prestígio social.',
+    biotype: 'ENDOMORFO',
+    text: '',
     count: 0,
-    video: 'https://youtu.be/uU4-4EsR6gU'
+    video: ''
   },
   {
     id: 1,
-    archetype: 'Criador',
-    text: 'Inovação, imaginação, criatividade, arte, liberdade.',
+    biotype: 'MESOMORFO',
+    text: '',
     count: 0,
-    video: 'https://youtu.be/uU4-4EsR6gU'  
+    video: ''  
   },
   {
     id: 2,
-    archetype: 'Cuidador',
-    text: 'Cuidado, conexão, empatia, comprometimento.',
+    biotype: 'ECTOMORFO',
+    text: '',
     count: 0,
-    video: 'https://youtu.be/uU4-4EsR6gU'
-  },
-  {
-    id: 3,
-    archetype: 'Herói',
-    text: 'Força, competência, coragem, competição, poder, revolução, segurança, certeza. ',
-    count: 0,
-    video: 'https://youtu.be/uU4-4EsR6gU'
-  },
-  {
-    id: 4,
-    archetype: 'Rebelde',
-    text: 'Poder, rebeldia, revolução, quebra de paradigmas.',
-    count: 0,
-    video: 'https://youtu.be/uU4-4EsR6gU'
-  },
-  {
-    id: 5,
-    archetype: 'Sábio',
-    text: 'Erudito, pesquisador, professor, especialista.',
-    count: 0,
-    video: 'https://youtu.be/uU4-4EsR6gU'
-  },
-  {
-    id: 6,
-    archetype: 'Explorador',
-    text: 'Descoberta, individualismo, liberdade, autenticidade.',
-    count: 0,
-    video: 'https://youtu.be/uU4-4EsR6gU'
-  },
-  {
-    id: 7,
-    archetype: 'Inocente',
-    text: 'Leveza, simplicidade, idealização, nostalgia, paz.',
-    count: 0,
-    video: 'https://youtu.be/uU4-4EsR6gU'
-  },
-  {
-    id: 8,
-    archetype: 'Cara Comum',
-    text: 'Inclusão, pertencimento, igualdade, simplicidade.',
-    count: 0,
-    video: 'https://youtu.be/uU4-4EsR6gU'
-  },
-  {
-    id: 9,
-    archetype: 'Bobo da corte',
-    text: 'Diversão, viver o momento presente, vida leve descontraída.',
-    count: 0,
-    video: 'https://youtu.be/uU4-4EsR6gU'
-  },
-  {
-    id: 10,
-    archetype: 'Mago',
-    text: 'Poder, magia, tecnologia, consciência, universo, sincronicidade, soluções milagrosas, lei da atração, abundância.',
-    count: 0,
-    video: 'https://youtu.be/uU4-4EsR6gU'
-  },
-  {
-    id: 11,
-    archetype: 'Amante',
-    text: 'Autoaceitação, felicidade, amor, êxtase, intimidade',
-    count: 0,
-    video: 'https://youtu.be/uU4-4EsR6gU'
+    video: ''
   }])
 
-const archetypeQuestions = ref([
+const biotypeQuestions = ref([
 {
-  question: 'Sobre a sua personalidade, qual desses traços está mais presente em você?',
+  question: 'Sua estrutura ossea é:',
   options: [{
     id: 0,
-    archetype: 'Governante',
-    option: 'Ambicioso'
+    biotype: 'ENDOMORFO',
+    option: 'BEM LARGA'
   },
   {
     id: 1,
-    archetype: 'Criador',
-    option: 'Criativo'
-  },
-  {
-    id: 2,
-    archetype: 'Cuidador',
-    option: 'Amoroso/Cuidadoso'
+    biotype: 'MESOMORFO',
+    option: 'LARGA E MÉDIA (normal)'
   },
   {
     id: 3,
-    archetype: 'Herói:',
-    option: 'Forte/Resiliente'
+    biotype: 'ECTOMORFO',
+    option: 'PEQUENA e com aparencia frágil'
+}],
+  selected: null
+},
+{
+  question: 'O seu corpo possui uma tendencia natural a:',
+  options: [
+  {
+    id: 0,
+    biotype: 'ENDOMORFO',
+    option: 'Armazenar gordura'
   },
   {
-    id: 4,
-    archetype: 'Rebelde',
-    option: 'Questionador/Revolucionário'
+    id: 1,
+    biotype: 'MESOMORFO',
+    option: 'Magro, porém com musculos visiveis '
   },
   {
-    id: 5,
-    archetype: 'Sábio',
-    option: 'Reflexivo/Estudioso/Sábio'
-  },
-  {
-    id: 6,
-    archetype: 'Explorador',
-    option: 'Aventureiro/Viajante'
-  },
-  {
-    id: 7,
-    archetype: 'Inocente',
-    option: 'Sonhador/Idealizador'
-  },
-  {
-    id: 8,
-    archetype: 'Cara Comum',
-    option: 'Empático/Amigável'
-  },
-  {
-    id: 9,
-    archetype: 'Bobo da corte',
-    option: 'Engraçado/Divertido'
-  },
-  {
-    id: 10,
-    archetype: 'Mago',
-    option: 'Espiritual/Inspirador'
-  },
-  {
-    id: 11,
-    archetype: 'Amante',
-    option: 'Romântico'
+    id: 2,
+    biotype: 'ECTOMORFO',
+    option: 'Sempre estar bem magro'
   }],
   selected: null
 },
 {
-  question: 'Seus principais valores:',
+  question: 'Seu aspecto físico é:',
   options: [
   {
     id: 0,
-    archetype: 'Governante',
-    option: 'Liderança, autoridade, ordem, controle, luxo, sucesso e poder'
+    biotype: 'ENDOMORFO',
+    option: 'Redondo e rechonchudo'
   },
   {
     id: 1,
-    archetype: 'Criador',
-    option: 'Criatividade, curiosidade, integridade, inovação e imaginação'
+    biotype: 'MESOMORFO',
+    option: 'Quadrado e robusto'
   },
   {
     id: 2,
-    archetype: 'Cuidador',
-    option: 'Cuidado, compaixão, acolhimento e altruísmo'
-  },
-  {
-    id: 3,
-    archetype: 'Herói:',
-    option: 'Coragem, ação, motivação, superação e disciplina'
-  },
-  {
-    id: 4,
-    archetype: 'Rebelde',
-    option: 'Disrupção, quebra de padrões, questionamento, originalidade e revolução'
-  },
-  {
-    id: 5,
-    archetype: 'Sábio',
-    option: 'Conhecimento, aprendizagem, lógica, razão e verdade'
-  },
-  {
-    id: 6,
-    archetype: 'Explorador',
-    option: 'Liberdade, independência, dinamismo, aventura e natureza'
-  },
-  {
-    id: 7,
-    archetype: 'Inocente',
-    option: 'Otimismo, esperança, simplicidade, bondade, pureza e felicidade'
-  },
-  {
-    id: 8,
-    archetype: 'Cara Comum',
-    option: 'Inclusão, igualdade, pertencimento, comunidade e amizade'
-  },
-  {
-    id: 9,
-    archetype: 'Bobo da corte',
-    option: 'Alegria, diversão, bom humor e leveza'
-  },
-  {
-    id: 10,
-    archetype: 'Mago',
-    option: 'Inspiração, encantamento, magia, experiência, intuição, transformação e consciência'
-  },
-  {
-    id: 11,
-    archetype: 'Amante',
-    option: 'Beleza, paixão, atração, relacionamento, desejo e sedução'
+    biotype: 'ECTOMORFO',
+    option: 'Longo e fino'
   }],
   selected: null
 },
 {
-  question: 'Seu AMBIENTE preferido é um lugar:',
+  question: 'Na sua opiniao, seus braços e pernas são:',
   options: [
   {
     id: 0,
-    archetype: 'Governante',
-    option: 'Chique, caro e luxuoso, que transmita poder e autoridade'
+    biotype: 'ENDOMORFO',
+    option: 'Curtos e engrossados'
   },
   {
     id: 1,
-    archetype: 'Criador',
-    option: 'Que me dê inspiração para criar'
+    biotype: 'MESOMORFO',
+    option: 'Possuem aspecto normal, com musculos visiveis'
   },
   {
     id: 2,
-    archetype: 'Cuidador',
-    option: 'Confortável, aconchegante, acolhedor'
-  },
-  {
-    id: 3,
-    archetype: 'Herói:',
-    option: 'Lugares diferentes, com pessoas e problemas/desafios para resolver'
-  },
-  {
-    id: 4,
-    archetype: 'Rebelde',
-    option: 'Em que posso expressar meus ideiais e causas que acredito'
-  },
-  {
-    id: 5,
-    archetype: 'Sábio',
-    option: 'Silencioso, e discreto, Onde posso escrever, estudar, refletir'
-  },
-  {
-    id: 6,
-    archetype: 'Explorador',
-    option: 'É o mundo todo, onde eu me sinta livre para explorar e para me conectar com a natureza'
-  },
-  {
-    id: 7,
-    archetype: 'Inocente',
-    option: 'Simples e delicado, onde me sinto em segurança para sonhar'
-  },
-  {
-    id: 8,
-    archetype: 'Cara Comum',
-    option: 'Em que todos podem ser tratados com igualdade'
-  },
-  {
-    id: 9,
-    archetype: 'Bobo da corte',
-    option: 'Festivo, leve, alegre, descontraído'
-  },
-  {
-    id: 10,
-    archetype: 'Mago',
-    option: 'Enigmático, misterioso, místico'
-  },
-  {
-    id: 11,
-    archetype: 'Amante',
-    option: 'Belo, sofisticado, romântico, com riqueza de detalhes'
+    biotype: 'ECTOMORFO',
+    option: 'Longos e finos '
   }],
   selected: null
 },
 {
-  question: 'Seu estilo de liderança:',
+  question: 'Quando criança, voce era:',
   options: [
   {
     id: 0,
-    archetype: 'Governante',
-    option: 'Política/estratégica'
+    biotype: 'ENDOMORFO',
+    option: 'Gordinho / ganhava peso facil'
   },
   {
     id: 1,
-    archetype: 'Criador',
-    option: 'Visionária'
+    biotype: 'MESOMORFO',
+    option: 'Normal'
   },
   {
     id: 2,
-    archetype: 'Cuidador',
-    option: 'Paternalista ou servidora'
-  },
-  {
-    id: 3,
-    archetype: 'Herói:',
-    option: 'Motivadora/coach'
-  },
-  {
-    id: 4,
-    archetype: 'Rebelde',
-    option: 'Revolucionária'
-  },
-  {
-    id: 5,
-    archetype: 'Sábio',
-    option: 'Especialista'
-  },
-  {
-    id: 6,
-    archetype: 'Explorador',
-    option: 'Pioneira'
-  },
-  {
-    id: 7,
-    archetype: 'Inocente',
-    option: 'Liberal'
-  },
-  {
-    id: 8,
-    archetype: 'Cara Comum',
-    option: 'Democrática'
-  },
-  {
-    id: 9,
-    archetype: 'Bobo da corte',
-    option: 'Leve e motivadora'
-  },
-  {
-    id: 10,
-    archetype: 'Mago',
-    option: 'Carismático e/ou espiritual'
-  },
-  {
-    id: 11,
-    archetype: 'Amante',
-    option: 'Facilitadora'
+    biotype: 'ECTOMORFO',
+    option: 'Magrinho '
   }],
   selected: null
 },
 {
-  question: 'Qual o seu maior dom?',
+  question: 'Seu metabolismo é:',
   options: [
   {
     id: 0,
-    archetype: 'Governante',
-    option: 'Liderança/poder/influência'
+    biotype: 'ENDOMORFO',
+    option: 'Lento'
   },
   {
     id: 1,
-    archetype: 'Criador',
-    option: 'Criatividade'
+    biotype: 'MESOMORFO',
+    option: 'Normal'
   },
   {
     id: 2,
-    archetype: 'Cuidador',
-    option: 'Ajudar as pessoas no que necessitam/servir'
-  },
-  {
-    id: 3,
-    archetype: 'Herói:',
-    option: 'Força, coragem, e motivar pessoas'
-  },
-  {
-    id: 4,
-    archetype: 'Rebelde',
-    option: 'Quebrar paradigmas'
-  },
-  {
-    id: 5,
-    archetype: 'Sábio',
-    option: 'Sabedoria/conhecimento acumulado'
-  },
-  {
-    id: 6,
-    archetype: 'Explorador',
-    option: 'Ajudar as pessoas a serem livres, fugirem do tédio, viverem experiências novas e autênticas'
-  },
-  {
-    id: 7,
-    archetype: 'Inocente',
-    option: 'Otimismo'
-  },
-  {
-    id: 8,
-    archetype: 'Cara Comum',
-    option: 'Me conectar com as pessoas'
-  },
-  {
-    id: 9,
-    archetype: 'Bobo da corte',
-    option: 'Ser engraçado/divertir as pessoas'
-  },
-  {
-    id: 10,
-    archetype: 'Mago',
-    option: 'Ajudar pessoas em sua transformação pessoal ou espiritual'
-  },
-  {
-    id: 11,
-    archetype: 'Amante',
-    option: 'Saber tornar as coisas ou pessoas atraentes física ou emocionalmente'
+    biotype: 'ECTOMORFO',
+    option: 'Muito rápido'
   }],
   selected: null
 },
 {
-  question: 'Seus maiores defeitos:',
+  question: 'Sobre seu peso, voce:',
   options: [
   {
     id: 0,
-    archetype: 'Governante',
-    option: 'As vezes passo tanta autoridade, que passo uma imagem inacessível'
+    biotype: 'ENDOMORFO',
+    option: 'Ganha peso com facilidade, e tem dificuldade para perder'
   },
   {
     id: 1,
-    archetype: 'Criador',
-    option: 'Perfeccionismo'
+    biotype: 'MESOMORFO',
+    option: 'Ganha peso ou perde facilmente, mas geralmente se mantem num peso ideal'
   },
   {
     id: 2,
-    archetype: 'Cuidador',
-    option: 'Penso muito nos outros e esqueço de mim mesma'
-  },
-  {
-    id: 3,
-    archetype: 'Herói:',
-    option: 'Raramente exponho minhas fraquezas e sou muito competitivo'
-  },
-  {
-    id: 4,
-    archetype: 'Rebelde',
-    option: 'As vezes sou crítico demais'
-  },
-  {
-    id: 5,
-    archetype: 'Sábio',
-    option: 'Tenho muito conhecimento e pouca prática'
-  },
-  {
-    id: 6,
-    archetype: 'Explorador',
-    option: 'Me entedio com facilidade, tenho vício em variedade'
-  },
-  {
-    id: 7,
-    archetype: 'Inocente',
-    option: 'Fico na zona de conforto diversas vezes'
-  },
-  {
-    id: 8,
-    archetype: 'Cara Comum',
-    option: 'Dependo das circunstâncias ou pessoas para estar bem e agir'
-  },
-  {
-    id: 9,
-    archetype: 'Bobo da corte',
-    option: 'Fujo/evito demais os momentos de tristeza'
-  },
-  {
-    id: 10,
-    archetype: 'Mago',
-    option: 'As vezes sou egoísta, ou convenço as pessoas de algo que só vai beneficiar a mim'
-  },
-  {
-    id: 11,
-    archetype: 'Amante',
-    option: 'Necessidade de aprovação e/ou ciúme'
+    biotype: 'ECTOMORFO',
+    option: 'Tem dificuldade para ganhar peso'
   }],
   selected: null
 },
 {
-  question: 'Um lema que mais combina com você:',
+  question: 'Sobre seu apetite, voce sente fome:',
   options: [
   {
     id: 0,
-    archetype: 'Governante',
-    option: '"Poder e influência são importantes"'
+    biotype: 'ENDOMORFO',
+    option: 'Praticamente o dia todo'
   },
   {
     id: 1,
-    archetype: 'Criador',
-    option: '"Se pode ser imaginado, pode ser criado"'
+    biotype: 'MESOMORFO',
+    option: 'Apetite controlado, sinto mais fome nos horarios das refeiçoes'
   },
   {
     id: 2,
-    archetype: 'Cuidador',
-    option: '"Ame ao próximo como a si mesmo"'
-  },
-  {
-    id: 3,
-    archetype: 'Herói:',
-    option: '"Onde há uma vontade há um caminho"'
-  },
-  {
-    id: 4,
-    archetype: 'Rebelde',
-    option: '"Regras foram feitas para serem quebradas"'
-  },
-  {
-    id: 5,
-    archetype: 'Sábio',
-    option: '"A verdade liberta"'
-  },
-  {
-    id: 6,
-    archetype: 'Explorador',
-    option: '"Não coloque cercas a minha volta"'
-  },
-  {
-    id: 7,
-    archetype: 'Inocente',
-    option: '"O essencial é simples"'
-  },
-  {
-    id: 8,
-    archetype: 'Cara Comum',
-    option: '"Todos são iguais"'
-  },
-  {
-    id: 9,
-    archetype: 'Bobo da corte',
-    option: '"Só se vive uma vez"'
-  },
-  {
-    id: 10,
-    archetype: 'Mago',
-    option: '"Meu pensamento faz as coisas acontecerem"'
-  },
-  {
-    id: 11,
-    archetype: 'Amante',
-    option: '"Cada pessoa é única"'
+    biotype: 'ECTOMORFO',
+    option: 'Nao sinto muita fome'
   }],
   selected: null
 },
 {
-  question: 'Palavras-chave que melhor te definem:',
+  question: 'As pessoas falam que seu fisico aparenta:',
   options: [
   {
     id: 0,
-    archetype: 'Governante',
-    option: 'Chefe, líder, ditador, general, presidente'
+    biotype: 'ENDOMORFO',
+    option: 'Inchado, retido, grande, acima do peso'
   },
   {
     id: 1,
-    archetype: 'Criador',
-    option: 'Artista, inovador, inventor, músico, escritor, poeta'
+    biotype: 'MESOMORFO',
+    option: 'Normal, porte atlético, nao precisa nem ganhar ou baixar peso'
   },
   {
     id: 2,
-    archetype: 'Cuidador',
-    option: 'Altruísta, mãe/pai, cuidador, apoiador, ajudante'
-  },
-  {
-    id: 3,
-    archetype: 'Herói:',
-    option: 'Guerreiro, salvador, super-herói, atleta, vencedor'
-  },
-  {
-    id: 4,
-    archetype: 'Rebelde',
-    option: 'Fora da lei, revolucionário, disruptivo'
-  },
-  {
-    id: 5,
-    archetype: 'Sábio',
-    option: 'Perito, especialista, conselheiro, pensador, filósofo, mentor, professor'
-  },
-  {
-    id: 6,
-    archetype: 'Explorador',
-    option: 'Aventureiro, peregrino, individualista'
-  },
-  {
-    id: 7,
-    archetype: 'Inocente',
-    option: 'Utópico, tradicionalista, ingênuo, sonhador, romântico, Poliana'
-  },
-  {
-    id: 8,
-    archetype: 'Cara Comum',
-    option: 'Bom vizinho, bom cidadão, pessoa da porta ao lado, amigo'
-  },
-  {
-    id: 9,
-    archetype: 'Bobo da corte',
-    option: 'Brincalhão, animador, performático'
-  },
-  {
-    id: 10,
-    archetype: 'Mago',
-    option: 'Visionário, inovador, líder carismático, curandeiro, místico, feiticeiro, mágico'
-  },
-  {
-    id: 11,
-    archetype: 'Amante',
-    option: 'Parceiro, Cônjuge, Íntimo, Casamenteiro, Sensualista'
+    biotype: 'ECTOMORFO',
+    option: 'Magrelo, raquítico, abaixo do peso'
   }],
   selected: null
 },
 {
-  question: 'Seu propósito ou propósito da sua empresa:',
+  question: 'Que tamanho de camiseta voce usa',
   options: [
   {
     id: 0,
-    archetype: 'Governante',
-    option: 'Criar uma família, empresa ou comunidade bem sucedida e próspera, e me tornar uma referência para as pessoas'
+    biotype: 'ENDOMORFO',
+    option: 'G , GG, ou EXTRA G'
   },
   {
     id: 1,
-    archetype: 'Criador',
-    option: 'Criar coisas de valor duradouro, uma obra, uma mensagem, um ambiente que seja significativo e que fique marcado na mente das pessoas'
+    biotype: 'MESOMORFO ',
+    option: 'M ou no máximo G'
   },
   {
     id: 2,
-    archetype: 'Cuidador',
-    option: 'Ajudar as pessoas a se sentirem seguras e nutridas, a cuidarem de si mesmas, a estarem conectadas umas as outras'
-  },
-  {
-    id: 3,
-    archetype: 'Herói:',
-    option: 'Ajudar as pessoas a agirem com coragem e protagonismo, e alcançarem melhores resultados'
-  },
-  {
-    id: 4,
-    archetype: 'Rebelde',
-    option: 'Ajudar as pessoas a deixarem para trás o que precisa morrer, para que possam renascer e revolucionar o mundo'
-  },
-  {
-    id: 5,
-    archetype: 'Sábio',
-    option: 'Ajudar as pessoas a pensarem, compreenderem o mundo em que vivem e a tomar decisões mais inteligentes'
-  },
-  {
-    id: 6,
-    archetype: 'Explorador',
-    option: 'Ajudar as pessoas a serem livres e independentes e a expressarem sua individualidade no mundo'
-  },
-  {
-    id: 7,
-    archetype: 'Inocente',
-    option: 'Ajudar as pessoas a serem mais felizes através da minha bondade e otimismo'
-  },
-  {
-    id: 8,
-    archetype: 'Cara Comum',
-    option: 'Ajudar as pessoas a se aceitarem como são e se sentirem parte de uma comunidade'
-  },
-  {
-    id: 9,
-    archetype: 'Bobo da corte',
-    option: 'Ajudar as pessoas a se divertirem, a viverem a vida no presente, a serem mais alegres e espontâneas'
-  },
-  {
-    id: 10,
-    archetype: 'Mago',
-    option: 'Ajudar as pessoas em suas jornadas de transformação pessoal e cura'
-  },
-  {
-    id: 11,
-    archetype: 'Amante',
-    option: 'Fazer com que as pessoas se sintam amadas e especiais, ajudá-las a conquistar outras pessoas e a construir relações em que possam dar e receber amor'
+    biotype: 'ECTOMORFO',
+    option: 'Geralmente P, às vezes M'
   }],
   selected: null
 },
 {
-  question: 'Sua maior crença:',
+  question: 'Quando voce compra roupas, geralmente elas ficam:',
   options: [
   {
     id: 0,
-    archetype: 'Governante',
-    option: 'Somos responsáveis por nossa vida e por nossos resultados'
+    biotype: 'ENDOMORFO',
+    option: 'Apertadas, preciso pegar tamanhos grandes para que nao fiquem desconfortáveis'
   },
   {
     id: 1,
-    archetype: 'Criador',
-    option: 'O mundo está cheio de mais do mesmo, precisamos inovar'
+    biotype: 'MESOMORFO',
+    option: 'Normais e vestem bem'
   },
   {
     id: 2,
-    archetype: 'Cuidador',
-    option: 'É dando que se recebe'
-  },
-  {
-    id: 3,
-    archetype: 'Herói',
-    option: 'Acredito que o mundo não é para os fracos. precisamos de padrões elevados de conduta para vencer nossos desafios'
-  },
-  {
-    id: 4,
-    archetype: 'Rebelde',
-    option: 'Acredito nas mudanças e que as vezes é preciso quebrar regras para que elas aconteçam'
-  },
-  {
-    id: 5,
-    archetype: 'Sábio',
-    option: 'Podemos encontrar a verdade por meio do conhecimento'
-  },
-  {
-    id: 6,
-    archetype: 'Explorador',
-    option: 'Preciso renunciar a segurança para garantir a autonomia e liberdade'
-  },
-  {
-    id: 7,
-    archetype: 'Inocente',
-    option: 'O mundo é um lugar bom, sem maldade. quem é mau é mau porque algo lhe foi feito. Vejo sempre o melhor nas pessoas'
-  },
-  {
-    id: 8,
-    archetype: 'Cara Comum',
-    option: 'Posso abrir mão de mim mesmo para fazer parte de algo maior'
-  },
-  {
-    id: 9,
-    archetype: 'Bobo da corte',
-    option: 'Precisamos viver o momento presente'
-  },
-  {
-    id: 10,
-    archetype: 'Mago',
-    option: 'É possível criar novas realidades a partir da mudança de consciência'
-  },
-  {
-    id: 11,
-    archetype: 'Amante',
-    option: 'É possível e necessário viver o amor no relacionamento e no meu trabalho'
+    biotype: 'ECTOMORFO',
+    option: ' Largas, principalmente nos braços'
   }],
   selected: null
 },
 {
-  question: 'Seu maior medo:',
+  question: 'Nesse momento, como voce descreve seu físico:',
   options: [
   {
     id: 0,
-    archetype: 'Governante',
-    option: 'Viver no caos e ser destituído'
+    biotype: 'ENDOMORFO',
+    option: 'Estou acima do peso, quero perder gordura e definir '
   },
   {
     id: 1,
-    archetype: 'Criador',
-    option: 'Ter uma vida medíocre ou igual a de todos'
+    biotype: 'MESOMORFO',
+    option: 'Estou num peso ideal, porem quero mais definiçao'
   },
   {
     id: 2,
-    archetype: 'Cuidador',
-    option: 'Ingratidão, egoísmo, ou acontecer algo de ruim com alguém que esteja sob meus cuidados'
-  },
-  {
-    id: 3,
-    archetype: 'Herói:',
-    option: 'Perder o controle da situação, demonstrar fraqueza e me tornar covarde'
-  },
-  {
-    id: 4,
-    archetype: 'Rebelde',
-    option: 'Ser comum, impotente, inconsequente ou ineficaz'
-  },
-  {
-    id: 5,
-    archetype: 'Sábio',
-    option: 'Ser enganado, iludido ou me tornar ignorante'
-  },
-  {
-    id: 6,
-    archetype: 'Explorador',
-    option: 'Ficar preso na armadilha da conformidade ou vazio interior'
-  },
-  {
-    id: 7,
-    archetype: 'Inocente',
-    option: 'Me expor ao ridículo, ser punido, desagradar as pessoas.'
-  },
-  {
-    id: 8,
-    archetype: 'Cara Comum',
-    option: 'Me destacar demais ou parecer que tenho mais importância que as outras pessoas, parecer esnobe ou exibido.'
-  },
-  {
-    id: 9,
-    archetype: 'Bobo da corte',
-    option: 'Aborrecer-se ou ser maçante'
-  },
-  {
-    id: 10,
-    archetype: 'Mago',
-    option: 'Ter consequências negativas inesperadas e não intencionais'
-  },
-  {
-    id: 11,
-    archetype: 'Amante',
-    option: 'Ficar sozinho, ser indesejado '
+    biotype: 'ECTOMORFO',
+    option: 'Estou abaixo do peso, quero ganhar volume muscular'
   }],
   selected: null
 },
 {
-  question: 'Seu maior desejo:',
+  question: 'Sua linha de cintura, naturalmente sempre foi:',
   options: [
   {
     id: 0,
-    archetype: 'Governante',
-    option: 'Liderar, e obter os recursos necessários para restaurar a harmonia e a ordem'
+    biotype: 'ENDOMORFO',
+    option: 'Larga, grossa e redonda'
   },
   {
     id: 1,
-    archetype: 'Criador',
-    option: 'Criar coisas de valor duradouro, uma obra, uma mensagem, um ambiente que seja significativo e que fique marcado na mente das pessoas'
+    biotype: 'MESOMORFO',
+    option: 'Normal'
   },
   {
     id: 2,
-    archetype: 'Cuidador',
-    option: 'Ajudar, proteger, e cuidar das pessoas. Ser lembrado por ter feito a minha parte.'
-  },
-  {
-    id: 3,
-    archetype: 'Herói:',
-    option: 'Fazer o impossível, através de ações corajosas, superando todos os desafios. foco na resolução de problemas'
-  },
-  {
-    id: 4,
-    archetype: 'Rebelde',
-    option: 'Revolucionar, quebrar padrões, destruir algo que não funciona mais'
-  },
-  {
-    id: 5,
-    archetype: 'Sábio',
-    option: 'Encontrar a verdade a partir de um cenário de confusão e dúvida'
-  },
-  {
-    id: 6,
-    archetype: 'Explorador',
-    option: 'Liberdade para explorar novas coisas e trilhar uma jornada de autodescoberta e autenticidade'
-  },
-  {
-    id: 7,
-    archetype: 'Inocente',
-    option: 'Vivenciar o paraíso. Através da minha pureza, bondade e simplicidade, busco viver experiências que me tragam paz e felicidade, nostalgia'
-  },
-  {
-    id: 8,
-    archetype: 'Cara Comum',
-    option: 'estar em conexão com as pessoas, fazer parte de um grupo, pertencer'
-  },
-  {
-    id: 9,
-    archetype: 'Bobo da corte',
-    option: 'Aproveitar a vida no momento presente, com alegria.'
-  },
-  {
-    id: 10,
-    archetype: 'Mago',
-    option: 'Conhecer as leis fundamentais do universo.'
-  },
-  {
-    id: 11,
-    archetype: 'Amante',
-    option: 'Criar intimidade e ter uma experiência de amor e prazer.'
-  }],
-  selected: null
-},
-{
-  question: 'Seus clientes ideais se buscam em seu serviço:',
-  options: [
-  {
-    id: 0,
-    archetype: 'Governante',
-    option: 'Obter segurança, ordem ou organização através de seus serviço'
-  },
-  {
-    id: 1,
-    archetype: 'Criador',
-    option: 'Obter inspiração para criar, ou facilitar seu processo criativo'
-  },
-  {
-    id: 2,
-    archetype: 'Cuidador',
-    option: 'Um meio de facilitar o cuidado que seu cliente possui com as pessoas que ama (Ex: algo que facilite o cuidado com os filhos ou com idosos)'
-  },
-  {
-    id: 2,
-    archetype: 'Cuidador',
-    option: 'Um meio de autocuidado (para clientes que já se doam demais pelos outros, como mães ou pessoas altamente altruístas)'
-  },
-  {
-    id: 3,
-    archetype: 'Herói:',
-    option: 'Motivação, inspiração ou ferramentas para superar obstáculos em suas jornadas e vencer'
-  },
-  {
-    id: 4,
-    archetype: 'Rebelde',
-    option: 'Algo diferente da maioria, que quebra paradigmas, que é revolucionário, diferente do que a maioria nesse nicho apresenta'
-  },
-  {
-    id: 5,
-    archetype: 'Sábio',
-    option: 'Agir de modo mais inteligente e tomar boas decisões'
-  },
-  {
-    id: 6,
-    archetype: 'Explorador',
-    option: 'Se descobrir em sua nova jornada de vida e/ou alcançar a liberdade'
-  },
-  {
-    id: 6,
-    archetype: 'Explorador',
-    option: 'Trilhar uma jornada diferente da maioria, ser autêntico/único'
-  },
-  {
-    id: 7,
-    archetype: 'Inocente',
-    option: 'Viver seus sonhos, viver experiências mágicas que sempre idealizou'
-  },
-  {
-    id: 7,
-    archetype: 'Inocente',
-    option: 'Viver uma vida simples, leve e feliz'
-  },
-  {
-    id: 8,
-    archetype: 'Cara Comum',
-    option: 'Fazer novas amizades. Se conectar com pessoas. Pertencer a um grupo.'
-  },
-  {
-    id: 9,
-    archetype: 'Bobo da corte',
-    option: 'Viver o momento presente, curtir, se divertir'
-  },
-  {
-    id: 10,
-    archetype: 'Mago',
-    option: 'Se curar, ou encontrar soluções milagrosas para seus problemas'
-  },
-  {
-    id: 11,
-    archetype: 'Amante',
-    option: 'Se sentirem atraentes e/ou amados. Ou viver um romance'
+    biotype: 'ECTOMORFO',
+    option: 'Pequena, fina'
   }],
   selected: null
 }
@@ -954,7 +291,7 @@ const quizCompleted = ref(false)
 const quizIntro = ref(true)
 const currentQuestion = ref(0)
 
-let archetypePercentage = []
+let biotypePercentage = []
 let threeHighestPercentages = []
 let optionSelected = null
 
@@ -963,7 +300,7 @@ const startQuiz = evt => {
 }
 
 const getCurrentQuestion = computed(() => {
-  let question = archetypeQuestions.value[currentQuestion.value]
+  let question = biotypeQuestions.value[currentQuestion.value]
   question.index = currentQuestion.value
   return question
 })
@@ -976,7 +313,7 @@ const isFirtQuestion = computed(() => {
 })
 
 const SetAnswer = evt => {
-  archetypeQuestions.value[currentQuestion.value].selected = evt.target.value
+  biotypeQuestions.value[currentQuestion.value].selected = evt.target.value
   evt.target.value = null
 }
 
@@ -986,13 +323,13 @@ const previusQuestion = () => {
 }
 
 const searchIdOptions = (indexQuestion, indexOption) => {
-  return archetypeQuestions.value[indexQuestion]?.options[indexOption]?.id
+  return biotypeQuestions.value[indexQuestion]?.options[indexOption]?.id
 }
 
 const NextQuestion = () => {
-  optionSelected = archetypeQuestions.value[currentQuestion.value].selected
-  SetCount(searchIdOptions(currentQuestion.value, archetypeQuestions.value[currentQuestion.value].selected))
-  if (currentQuestion.value < archetypeQuestions.value.length - 1) {
+  optionSelected = biotypeQuestions.value[currentQuestion.value].selected
+  SetCount(searchIdOptions(currentQuestion.value, biotypeQuestions.value[currentQuestion.value].selected))
+  if (currentQuestion.value < biotypeQuestions.value.length - 1) {
     currentQuestion.value++
   } else {
     quizCompleted.value = true
@@ -1001,7 +338,7 @@ const NextQuestion = () => {
 }
 
 const SetCount = (selectedOption) => {
-  archetypeCounts.value.forEach(element => {
+  biotypeCounts.value.forEach(element => {
     if (element.id == selectedOption) {
       element.count++
     }
@@ -1009,7 +346,7 @@ const SetCount = (selectedOption) => {
 }
 
 const removeCount = () => {
-  archetypeCounts.value.forEach(element => {
+  biotypeCounts.value.forEach(element => {
     if (element.id == optionSelected) {
       element.count--
     }
@@ -1028,12 +365,12 @@ const calcPercentage = (value) => {
 
 const setThreeHighestPercentages = () => {
   let i = 0
-  archetypeCounts.value.forEach(element => {
-    archetypePercentage[i] = {achertype: element.archetype, text: element.text, percentage: calcPercentage(element.count), video: element.video}
-    // console.log('Obj: ', archetypePercentage[i])
+  biotypeCounts.value.forEach(element => {
+    biotypePercentage[i] = {biotype: element.biotype, text: element.text, percentage: calcPercentage(element.count), video: element.video}
+    // console.log('Obj: ', biotypePercentage[i])
     i++
   })
-  threeHighestPercentages = getThreeLargestObjects(archetypePercentage, 'percentage')
+  threeHighestPercentages = getThreeLargestObjects(biotypePercentage, 'percentage')
   console.log('3maiores: ', threeHighestPercentages)
 }
 </script>
@@ -1043,12 +380,12 @@ const setThreeHighestPercentages = () => {
     <section 
       v-if="quizIntro"
       class="intro-section">
-      <h1 class="intro-title">Qual é o seu <span class="intro-title-archetype">arquétipo</span>?</h1>
+      <h1 class="intro-title">Qual é o seu <span class="intro-title-biotype">biotipo</span>?</h1>
       <p class="intro-text">
         Para que seu resultado seja assertivo, 
         leia com calma todas as alternativas, 
         e mesmo que fique em dúvida entre mais de uma,
-        escolha a que prevalecer em sua personalidade ou aspecto do seu negócio.
+        escolha a que prevalecer de4 acordo com seu aspecto físico.
       </p>
       <div class="intro-wrapper">
         <button 
@@ -1100,7 +437,7 @@ const setThreeHighestPercentages = () => {
           @click="NextQuestion"
           :disabled="!getCurrentQuestion.selected">
           {{ 
-            getCurrentQuestion.index == archetypeQuestions.length - 1
+            getCurrentQuestion.index == biotypeQuestions.length - 1
               ? 'Finalizar'
               : getCurrentQuestion.selected == null
                 ? 'Selecione uma opção'
@@ -1114,22 +451,22 @@ const setThreeHighestPercentages = () => {
       <h1 class="final-title"><span class="congrats">Parabéns!</span> Analisei os dados do seu perfil e aqui abaixo estão os arquétipos que mais combinam com você! </h1>
       <div class="result-component">
         <div class="result-wrapper">
-          <div class="archetype-wrapper">
-            <p class="first-archetype">{{ threeHighestPercentages[0].achertype }}: {{ parseInt(threeHighestPercentages[0].percentage) }}%</p>
-            <p class="archetype-text">{{ threeHighestPercentages[0].text }}</p>
+          <div class="biotype-wrapper">
+            <p class="first-biotype">{{ threeHighestPercentages[0].biotype }}: {{ parseInt(threeHighestPercentages[0].percentage) }}%</p>
+            <p class="biotype-text">{{ threeHighestPercentages[0].text }}</p>
             <div class="video">
               <YouTube width="100%" :src="threeHighestPercentages[0].video" ref="youtube">
                 Seu navegador não suporta o vídeo.
               </YouTube>
             </div>
           </div>
-          <div class="archetype-wrapper" v-if="threeHighestPercentages[1].percentage">
-            <p class="second-archetype">{{ threeHighestPercentages[1].achertype }}: {{ parseInt(threeHighestPercentages[1].percentage) }}%</p>
-            <p class="archetype-text">{{ threeHighestPercentages[1].text }}</p>
+          <div class="biotype-wrapper" v-if="threeHighestPercentages[1].percentage">
+            <p class="second-biotype">{{ threeHighestPercentages[1].biotype }}: {{ parseInt(threeHighestPercentages[1].percentage) }}%</p>
+            <p class="biotype-text">{{ threeHighestPercentages[1].text }}</p>
           </div>
-          <div class="archetype-wrapper-last" v-if="threeHighestPercentages[2].percentage">
-            <p class="third-archetype">{{ threeHighestPercentages[2].achertype }}: {{ parseInt(threeHighestPercentages[2].percentage) }}%</p>
-            <p class="archetype-text">{{ threeHighestPercentages[2].text }}</p>
+          <div class="biotype-wrapper-last" v-if="threeHighestPercentages[2].percentage">
+            <p class="third-biotype">{{ threeHighestPercentages[2].biotype }}: {{ parseInt(threeHighestPercentages[2].percentage) }}%</p>
+            <p class="biotype-text">{{ threeHighestPercentages[2].text }}</p>
           </div>
         </div>
         <div>
@@ -1191,7 +528,7 @@ h1 {
   margin: 40px 0;
 }
 
-.intro-title-archetype {
+.intro-title-biotype {
   font-family: 'Brown Sugar';
   color: #C5A361;
 }
@@ -1375,16 +712,16 @@ h1 {
   box-shadow: 0 0 20px #868584;
 }
 
-.archetype-wrapper {
+.biotype-wrapper {
   margin-bottom: 70px;
   text-align: center;
 }
-.archetype-wrapper-last {
+.biotype-wrapper-last {
   text-align: center;
   margin-bottom: 5px;
 }
 
-.first-archetype, .second-archetype, .third-archetype {
+.first-biotype, .second-biotype, .third-biotype {
   font-family: 'Claster Oleander';
   
   font-weight: 600;
@@ -1392,7 +729,7 @@ h1 {
   margin-bottom: 10px;
 }
 
-.first-archetype, .second-archetype, .third-archetype {
+.first-biotype, .second-biotype, .third-biotype {
   font-size: 3em;
 }
 
@@ -1402,7 +739,7 @@ h1 {
   max-height: 360px;
 }
 
-.archetype-text {
+.biotype-text {
   color: #DFC694;
   font-size: 1.5em;
   font-family: 'Poppins', sans-serif;
@@ -1488,10 +825,10 @@ p {
 }
 
 @media screen and (max-width: 434px) {
-  .first-archetype, .second-archetype, .third-archetype {
+  .first-biotype, .second-biotype, .third-biotype {
     font-size: 2em;
   }
-  .archetype-text {
+  .biotype-text {
     font-size: 1em;
   }
 }
