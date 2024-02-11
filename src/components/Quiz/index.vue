@@ -9,7 +9,8 @@
         biotype: String,
         option: String
       },
-      selected: [null, Number]
+      selected: [null, Number],
+      index: Number
     },
     isFirstQuestion: Boolean,
     totalQuestion: Number
@@ -43,17 +44,17 @@
     <div class="options">
       <label 
         v-for="(option, index) in question.options" 
-        :key="option.id"
+        :key="`${option.id}-${option.option}`"
         :class="`option ${
-          question.selected == index
+          question.selected === index
             ? 'selected'
             : ''
         }`"
       >
         <input 
-          type="radio" 
+          type="radio"
           :name="question.index"
-          :value="index"
+          :value="option.id"
           @input="handleAnswerQuestion($event.target.value)"
         >
 
