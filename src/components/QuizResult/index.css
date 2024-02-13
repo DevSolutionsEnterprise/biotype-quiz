@@ -2,7 +2,7 @@
   font-family: 'Claster Oleander';
   font-weight: 500;
   font-size: 3em;
-  color: #227382;
+  color: #fff;
   margin: 10px 0 50px 0;
   text-align: center;
 }
@@ -19,7 +19,7 @@
 }
 
 .result-wrapper {
-  background-color: #227382;
+  background-color: #434242;
   border-radius: 0.5rem;
   padding: 20px 10px;
   box-shadow: 0 0 20px #868584;

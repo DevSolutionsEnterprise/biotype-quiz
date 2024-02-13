@@ -2,7 +2,7 @@
   font-family: 'Claster Oleander';
   font-weight: 500;
   font-size: 6em;
-  color: #227382;
+  color: #fff;
   margin: 40px 0;
 }
 
@@ -12,10 +12,10 @@
 }
 
 .intro-text {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 500;
+  font-family: 'Poppins Light';
+  font-weight: 300;
   font-size: 1.5em;
-  color: #585858;
+  color: #fff;
 }
 
 .intro-wrapper {
@@ -29,13 +29,13 @@
   border: none;
   cursor: pointer;
 
-  background-image: linear-gradient(to right, #C5A361, #DFC694);
+  background-color: #D1C5B6;
   border-radius: 8px;
   font-size: 1.3em;
   font-weight: 500;
-  font-family: 'Claster Oleander';
+  font-family: 'Poppins', sans-serif;
   padding: 15px 55px;
-  color: #000;
+  color: #EB3132;
 }
 
 .start-quiz-button:hover {
@@ -87,7 +87,7 @@
 
   .intro-text {
     font-size: 1.2em;
-    text-align: center;
+    text-align: justify;
   }
 
   .intro-wrapper {

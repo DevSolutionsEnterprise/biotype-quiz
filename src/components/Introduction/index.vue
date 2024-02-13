@@ -8,16 +8,12 @@
 
 <template>
   <section class="intro-section">
-    <h1 class="intro-title">
-      Qual é o seu 
-      <span class="intro-title-biotype">biotipo</span>?
-    </h1>
+    <h2 class="intro-title">
+      TESTE DE BIOTIPO
+    </h2>
 
     <p class="intro-text">
-      Para que seu resultado seja assertivo, 
-      leia com calma todas as alternativas, 
-      e mesmo que fique em dúvida entre mais de uma,
-      escolha a que prevalecer de acordo com seu aspecto físico.
+      Para que seu resultado seja assertivo, leia com calma todas as alternativas e mesmo que fique em dúvida entre mais de uma, escolha a que prevalecer em sua aparência física e de acordo com o que as pessoas comentam para você sobre seu corpo.
     </p>
 
     <div class="intro-wrapper">
@@ -31,13 +27,6 @@
       <hr class="line">
     </div>
 
-    <div class="img-wrapper">
-      <img 
-        class="logo-img" 
-        src="./assets/images/prancheta_1_copia_14.png" 
-        alt="Logo"
-      />
-    </div>
   </section>
 </template>
 

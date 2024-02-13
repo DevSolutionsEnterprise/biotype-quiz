@@ -8,6 +8,11 @@
   src: url('../src/assets/fonts/Claster_Oleander.otf') format('truetype');
 }
 
+@font-face {
+  font-family: 'Poppins Light';
+  src: url('../src/assets/fonts/Poppins-Light.ttf') format('truetype');
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -15,8 +20,8 @@
 }
 
 body {
-  background-image: url('./assets/images/img-noise-361x370.png');
-  background-repeat: repeat;
+  background-image: url('./assets/images/image1.png');
+  background-color: #252525;
 }
 
 h1 {

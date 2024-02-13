@@ -1,5 +1,5 @@
 .quiz {
-  background-color: #C9BCB3;
+  background-color: #434242;
   padding: 1rem;
   width: 100%;
   max-width: 640px;
@@ -15,7 +15,7 @@
 }
 
 .quiz-info .question {
-  color: black;
+  color: #fff;
   font-size: 2rem;
   font-family: 'Claster Oleander';
 }
@@ -32,8 +32,8 @@
 .option {
   display: block;
   padding: 1rem;
-  color: #E6D9D9;
-  background-color: #227382;
+  color: #000;
+  background-color: #D1C5B6;
   margin-bottom: 0.5rem;
   border-radius: 0.5rem;
   cursor: pointer;
@@ -41,8 +41,8 @@
 }
 
 .option:hover {
-  background-color: #DFC694;
-  color: #000;
+  background-color: #C89133;
+  color: #fff;
 }
 
 .option.correct {
@@ -54,8 +54,8 @@
 }
 
 .option.selected {
-  color: #000;
-  background-color: #C5A361;
+  color: #fff;
+  background-color: #C89133;
 }
 
 .option:last-of-type {
@@ -81,12 +81,21 @@
   cursor: pointer;
 
   padding: 0.5rem 1rem;
-  background-image: linear-gradient(to right, #C5A361, #DFC694);
+  background-color: #6DCA9D;
   color: #2d213f;
   border-radius: 8px;
   font-size: 1.3em;
   font-weight: 500;
-  font-family: 'Claster Oleander';
+  font-family: 'Poppins Lighter';
+}
+
+.next-button {
+  background-color: #6DCA9D;
+}
+
+.return-button {
+  color: #fff;
+  background-color: #EB3132;
 }
 
 .return-button {

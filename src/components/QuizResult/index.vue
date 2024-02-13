@@ -14,11 +14,7 @@
 <template>
   <section>
     <h1 class="final-title">
-      <span class="congrats">
-        Parabéns!
-      </span> 
-
-      Analisei os dados do seu perfil e aqui abaixo estão os arquétipos que mais combinam com você! 
+        Você é
     </h1>
 
     <div class="result-component">
