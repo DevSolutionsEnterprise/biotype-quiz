@@ -1,0 +1,47 @@
+@font-face {
+  font-family: 'Brown Sugar';
+  src: url('../src/assets/fonts/Brown_Sugar.otf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Claster Oleander';
+  src: url('../src/assets/fonts/Claster_Oleander.otf') format('truetype');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url('./assets/images/img-noise-361x370.png');
+  background-repeat: repeat;
+}
+
+h1 {
+  font-weight: 2rem;
+  margin-bottom: 2rem;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+button:disabled {
+  opacity: 0.5;
+}
+
+p {
+  color: #8f8f8f;
+  font-size: 1.25rem;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  min-height: 100vh;
+}
