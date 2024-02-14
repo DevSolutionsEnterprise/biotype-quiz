@@ -1,4 +1,6 @@
 <script setup>
+  import { ref } from 'vue'
+  
   const emit = defineEmits(['previous', 'next', 'answer']);
 
   defineProps({
@@ -13,8 +15,10 @@
       index: Number
     },
     isFirstQuestion: Boolean,
-    totalQuestion: Number
+    totalQuestion: Number,
   });
+
+  const progress = ref(0);
 
   const NAME_BUTTON_FINISH = 'Finalizar';
   const NAME_BUTTON_NEXT = 'Avançar';
@@ -31,10 +35,24 @@
   const handleAnswerQuestion = (indexQuestion) => {
     emit('answer', Number(indexQuestion));
   }
+
+  const increaseProgress = () => {
+    if (progress.value < 100) {
+      progress.value += 8;
+    }
+  }
+
+  const callFunctions = () => {
+    handleNextQuestion();
+    increaseProgress();
+  }
 </script>
 
 <template>
   <section class="quiz">
+    <div class="progress-bar">
+      <div class="inner-bar" :style="{ width: progress + '%' }"></div>
+    </div>
     <div class="quiz-info">
       <span class="question">
         {{ question.question }}
@@ -76,7 +94,7 @@
       <button
         class="next-button"
         :disabled="question.selected === null"
-        @click="handleNextQuestion"
+        @click="callFunctions"
       >
         {{ 
           question.index === totalQuestion
