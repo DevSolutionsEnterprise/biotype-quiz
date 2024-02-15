@@ -4,7 +4,7 @@
   import Introduction from '../../components/Introduction/index.vue';
   import Quiz from '../../components/Quiz/index.vue';
   import QuizResult from '../../components/QuizResult/index.vue';
-
+  
   import { QUESTIONS } from '../../constants/questions';
 
   const biotypeCounts = ref([
@@ -134,23 +134,28 @@
 </script>
 
 <template>
-  <Introduction 
-    v-if="quizIntro" 
-    @start="startQuiz"
-  />
-
-  <Quiz 
-    v-else-if="!quizCompleted && !quizIntro"
-    :isFirstQuestion="isFirstQuestion"
-    :question="getCurrentQuestion"
-    :totalQuestion="biotypeQuestions.length - 1"
-    @previous="previousQuestion"
-    @next="nextQuestion"
-    @answer="setAnswer"
-  />
+  <div class="page-quiz">
+    <Introduction 
+      v-if="quizIntro" 
+      @start="startQuiz"
+    />
   
-  <QuizResult 
-    v-else
-    :biotype="definedBiotype"
-  />
+    <Quiz 
+      v-else-if="!quizCompleted && !quizIntro"
+      :isFirstQuestion="isFirstQuestion"
+      :question="getCurrentQuestion"
+      :totalQuestion="biotypeQuestions.length - 1"
+      :positionQuestion="currentQuestion"
+      @previous="previousQuestion"
+      @next="nextQuestion"
+      @answer="setAnswer"
+    />
+    
+    <QuizResult 
+      v-else
+      :biotype="definedBiotype"
+    />
+  </div>
 </template>
+
+<style src="./index.css" scoped />

@@ -1,9 +1,9 @@
 <script setup>
-  import { ref } from 'vue'
+  import { computed } from 'vue'
   
   const emit = defineEmits(['previous', 'next', 'answer']);
 
-  defineProps({
+  const props = defineProps({
     question: {
       question: String,
       options: {
@@ -16,13 +16,17 @@
     },
     isFirstQuestion: Boolean,
     totalQuestion: Number,
+    positionQuestion: Number,
   });
-
-  const progress = ref(0);
 
   const NAME_BUTTON_FINISH = 'Finalizar';
   const NAME_BUTTON_NEXT = 'Avançar';
   const NAME_BUTTON_SELECT_OPTION = 'Selecione uma opção';
+  const ONE_HUNDRED = 100;
+
+  const progress = computed(() => {
+    return ((props.positionQuestion * ONE_HUNDRED) / props.totalQuestion).toFixed(0);
+  })
 
   const handlePreviousQuestion = () => {
     emit('previous');
@@ -35,75 +39,77 @@
   const handleAnswerQuestion = (indexQuestion) => {
     emit('answer', Number(indexQuestion));
   }
-
-  const increaseProgress = () => {
-    if (progress.value < 100) {
-      progress.value += 8;
-    }
-  }
-
-  const callFunctions = () => {
-    handleNextQuestion();
-    increaseProgress();
-  }
 </script>
 
 <template>
-  <section class="quiz">
+  <section class="section__quiz">
     <div class="progress-bar">
-      <div class="inner-bar" :style="{ width: progress + '%' }"></div>
+      <div 
+        class="progress-bar__inner" 
+        :style="{ width: `${progress}%` }"
+        :data-progress="`${progress}%`"
+      ></div>
     </div>
-    <div class="quiz-info">
-      <span class="question">
-        {{ question.question }}
-      </span>
-    </div>
-
-    <div class="options">
-      <label 
-        v-for="(option, index) in question.options" 
-        :key="`${option.id}-${option.option}`"
-        :class="`option ${
-          question.selected === index
-            ? 'selected'
-            : ''
-        }`"
-      >
-        <input 
-          type="radio"
-          :name="question.index"
-          :value="option.id"
-          @input="handleAnswerQuestion($event.target.value)"
-        >
-
-        <span>
-          {{ option.option }}
+  
+    <div class="container-quiz">
+      <div class="quiz__question">
+        <span class="question__title">
+          {{ question.question }}
         </span>
-      </label>
-    </div>
+      </div>
+  
+      <div class="quiz__options">
+        <label 
+          v-for="(option, index) in question.options" 
+          :key="`${option.id}-${option.option}`"
+          :class="`quiz__option ${
+            question.selected === index
+              ? '--selected'
+              : ''
+          }`"
+        >
+          <input 
+            type="radio"
+            :name="question.index"
+            :value="option.id"
+            class="quiz__input"
+            @input="handleAnswerQuestion($event.target.value)"
+          >
+  
+          <span class="option__title">
+            {{ option.option }}
+          </span>
+        </label>
 
-    <div class="wrapper-button">
-      <button
-        v-if="!isFirstQuestion"
-        class="return-button"
-        @click="handlePreviousQuestion"
-      >
-        Voltar
-      </button>
-
-      <button
-        class="next-button"
-        :disabled="question.selected === null"
-        @click="callFunctions"
-      >
-        {{ 
-          question.index === totalQuestion
-            ? NAME_BUTTON_FINISH
-            : question.selected === null
-              ? NAME_BUTTON_SELECT_OPTION
+        <span 
+          v-if="question.selected === null"
+          class="quiz__selection-option"
+        >
+          {{ NAME_BUTTON_SELECT_OPTION }}
+        </span>
+      </div>
+  
+      <div class="quiz__wrapper-button">
+        <button
+          v-if="!isFirstQuestion"
+          class="button__previous"
+          @click="handlePreviousQuestion"
+        >
+          Voltar
+        </button>
+  
+        <button
+          class="button__next"
+          :disabled="question.selected === null"
+          @click="handleNextQuestion"
+        >
+          {{ 
+            question.index === totalQuestion
+              ? NAME_BUTTON_FINISH
               : NAME_BUTTON_NEXT
-        }}
-      </button>
+          }}
+        </button>
+      </div>
     </div>
   </section>
 </template>

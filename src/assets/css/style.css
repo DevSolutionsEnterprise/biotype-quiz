@@ -1,0 +1,16 @@
+button {
+  appearance: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed
+}
+
+p {
+  color: #8f8f8f;
+  font-size: 1.25rem;
+}
