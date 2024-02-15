@@ -1,5 +1,7 @@
 <script setup>
   import { computed } from 'vue'
+
+  import ProgressBar from '../ProgressBar/index.vue';
   
   const emit = defineEmits(['previous', 'next', 'answer']);
 
@@ -43,13 +45,9 @@
 
 <template>
   <section class="section__quiz">
-    <div class="progress-bar">
-      <div 
-        class="progress-bar__inner" 
-        :style="{ width: `${progress}%` }"
-        :data-progress="`${progress}%`"
-      ></div>
-    </div>
+    <ProgressBar 
+      :progress="progress"
+    />
   
     <div class="container-quiz">
       <div class="quiz__question">
