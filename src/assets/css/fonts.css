@@ -1,14 +1,24 @@
 @font-face {
-  font-family: 'Brown Sugar';
-  src: url('../src/assets/fonts/Brown_Sugar.otf') format('truetype');
+  font-family: 'Gordita Bold';
+  src: url('../src/assets/fonts/Gordita-Bold.otf') format('truetype');
 }
 
 @font-face {
-  font-family: 'Claster Oleander';
-  src: url('../src/assets/fonts/Claster_Oleander.otf') format('truetype');
+  font-family: 'Poppins Bold';
+  src: url('../src/assets/fonts/Poppins-Bold.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: 'Poppins Light';
-  src: url('../src/assets/fonts/Poppins-Light.ttf') format('truetype');
+  font-family: 'Poppins Medium';
+  src: url('../src/assets/fonts/Poppins-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Poppins Regular';
+  src: url('../src/assets/fonts/Poppins-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Poppins SemiBold';
+  src: url('../src/assets/fonts/Poppins-SemiBold.ttf') format('truetype');
 }

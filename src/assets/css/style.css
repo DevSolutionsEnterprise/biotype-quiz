@@ -3,6 +3,8 @@ button {
   outline: none;
   border: none;
   cursor: pointer;
+  width: 250px;
+  height: 50px;
 }
 
 button:disabled {
@@ -14,3 +16,12 @@ p {
   color: #8f8f8f;
   font-size: 1.25rem;
 }
+
+body {
+  font-family: 'Poppins Regular';
+}
+
+h1 , h2 , h3 , h4 , h5 , h6 , h7 , h8 {
+  font-family: 'Poppins Regular';
+}
+
