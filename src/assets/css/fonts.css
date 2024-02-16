@@ -1,0 +1,14 @@
+@font-face {
+  font-family: 'Brown Sugar';
+  src: url('../src/assets/fonts/Brown_Sugar.otf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Claster Oleander';
+  src: url('../src/assets/fonts/Claster_Oleander.otf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Poppins Light';
+  src: url('../src/assets/fonts/Poppins-Light.ttf') format('truetype');
+}

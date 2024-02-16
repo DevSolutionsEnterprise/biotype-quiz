@@ -7,25 +7,21 @@
 </script>
 
 <template>
-  <section class="intro-section">
-    <h2 class="intro-title">
-      TESTE DE BIOTIPO
+  <section class="section__introduction">
+    <h2 class="introduction__title">
+      Descubra seu biotipo!
     </h2>
 
-    <p class="intro-text">
-      Para que seu resultado seja assertivo, leia com calma todas as alternativas e mesmo que fique em dúvida entre mais de uma, escolha a que prevalecer em sua aparência física e de acordo com o que as pessoas comentam para você sobre seu corpo.
+    <p class="introduction__description">
+      Para que seu resultado seja assertivo, leia com calma todas as alternativas, e mesmo que fique em dúvida entre mais de uma, escolha  a que prevalecer de acordo com seu aspecto físico.
     </p>
 
-    <div class="intro-wrapper">
-      <button 
-        class="start-quiz-button"
-        @click="startQuiz"
-      >
-        Começar
-      </button>
-
-      <hr class="line">
-    </div>
+    <button 
+      class="introduction__button"
+      @click="startQuiz"
+    >
+      Começar
+    </button>
 
   </section>
 </template>
