@@ -1,5 +1,4 @@
 .final-title {
-  font-family: 'Claster Oleander';
   font-weight: 500;
   font-size: 3em;
   color: #fff;
@@ -9,11 +8,10 @@
 
 .congrats {
   color: #C5A361; 
-  font-family: 'Brown Sugar';
 }
 
 .result-component {
-  background-color: #C9BCB3;
+  background-color: #D1C5B6;
   border-radius: 0.5rem;
   padding: 1.5rem;
 }
@@ -35,7 +33,6 @@
 }
 
 .first-biotype, .second-biotype, .third-biotype {
-  font-family: 'Claster Oleander';
   
   font-weight: 600;
   color: #C5A361;
@@ -55,7 +52,6 @@
 .biotype-text {
   color: #DFC694;
   font-size: 1.5em;
-  font-family: 'Poppins', sans-serif;
 }
 
 .access-button {
@@ -64,13 +60,12 @@
   border: none;
   cursor: pointer;
 
-  background-image: linear-gradient(to right, #C5A361, #DFC694);
+  background-image: linear-gradient(to right, #C89133, #434242);
   border-radius: 8px;
   font-size: 1.3em;
   font-weight: 500;
-  font-family: 'Claster Oleander';
   padding: 15px 55px;
-  color: #000;
+  color: #EB3132;
   display: block;
   margin: 0 auto;
   text-align: center;
@@ -89,21 +84,18 @@
 
 .access-first-info {
   font-size: 2.5em;
-  font-family: 'Claster Oleander';
-  color: #227382;
+  color: #C89133;
   margin-top: 50px;
 }
 
 .access-second-info {
-  font-family: 'Poppins', sans-serif;
   color: #585858;
   font-size: 1.5em;
 }
 
 .msg {
-  color: #C5A361;
+  color: #C89133;
   text-align: center;
-  font-family: 'Brown Sugar';
   font-weight: 700;
   font-size: 4em;
   margin: 20px 0; 

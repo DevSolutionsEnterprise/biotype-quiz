@@ -42,23 +42,22 @@
 
       <div>
         <p class="access-first-info">
-          Para ter acesso às aulas de todos os arquétipos, basta entrar em sua área de membros.
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry.
         </p>
 
         <a 
           class="access-button" 
           target="_blank"
-          href="https://sso.hotmart.com/login?service=https://purchase.hotmart.com/?_gl=1*1chgn4f*_ga*MTQwNzEyNDQ1OC4xNjc2NjQwODk5*_ga_GQH2V1F11Q*MTY3NjczNDQ3Ni41LjEuMTY3NjczNTM3Ny41Ny4wLjA.&renew=true"
         >
           Acessar
         </a>
 
         <p class="access-second-info">
-          Ao acessá-la, o próximo passo será assistir o módulo “Aulas de aplicação” para saber como usar seus principais arquétipos de forma prática em suas redes sociais e demais lugares.
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry.
         </p>
 
         <p class="msg">
-          Boas aulas!
+          Lorem Ipsum!
         </p>
       </div>
     </div>
