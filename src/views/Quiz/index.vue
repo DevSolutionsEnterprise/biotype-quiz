@@ -11,7 +11,7 @@
     {
       id: 0,
       biotype: 'ENDOMORFO',
-      text: 'Para entender um pouco mais sobre ele e sobre o seu treino, assita o vídeo abaixo!',
+      text: 'Para entender um pouco mais sobre o seu biotipo e o seu treino, assista o vídeo abaixo!',
       count: 0,
       video: 'https://youtu.be/jXMfhRIeYh0',
       pdf: 'ENDOMORFO.pdf'
@@ -19,7 +19,7 @@
     {
       id: 1,
       biotype: 'MESOMORFO',
-      text: 'Para entender um pouco mais sobre ele e sobre o seu treino, assita o vídeo abaixo!',
+      text: 'Para entender um pouco mais sobre o seu biotipo e o seu treino, assista o vídeo abaixo!',
       count: 0,
       video: 'https://youtu.be/3yj277SjuKY',
       pdf: 'MESOMORFO.pdf'
@@ -27,7 +27,7 @@
     {
       id: 2,
       biotype: 'ECTOMORFO',
-      text: 'Para entender um pouco mais sobre ele e sobre o seu treino, assita o vídeo abaixo!',
+      text: 'Para entender um pouco mais sobre o seu biotipo e o seu treino, assista o vídeo abaixo!',
       count: 0,
       video: 'https://youtu.be/YPvxkoxlAjE',
       pdf: 'ECTMORFO.pdf'
