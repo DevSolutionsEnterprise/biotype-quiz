@@ -18,10 +18,10 @@ p {
 }
 
 body {
-  font-family: 'Poppins Regular';
+  font-family: 'Poppins Regular', 'Poppins Medium', 'Poppins SemiBold', 'Poppins Bold', sans-serif;
 }
 
 h1 , h2 , h3 , h4 , h5 , h6 , h7 , h8 {
-  font-family: 'Poppins Regular';
+  font-family: 'Gordita Bold', sans-serif;
 }
 

@@ -11,23 +11,26 @@
     {
       id: 0,
       biotype: 'ENDOMORFO',
-      text: '',
+      text: 'Para entender um pouco mais sobre ele e sobre o seu treino, assita o vídeo abaixo!',
       count: 0,
-      video: 'https://www.youtube.com/watch?v=jfKfPfyJRdk'
+      video: 'https://youtu.be/jXMfhRIeYh0',
+      pdf: 'ENDOMORFO.pdf'
     },
     {
       id: 1,
       biotype: 'MESOMORFO',
-      text: '',
+      text: 'Para entender um pouco mais sobre ele e sobre o seu treino, assita o vídeo abaixo!',
       count: 0,
-      video: 'https://www.youtube.com/watch?v=jfKfPfyJRdk'  
+      video: 'https://youtu.be/3yj277SjuKY',
+      pdf: 'MESOMORFO.pdf'
     },
     {
       id: 2,
       biotype: 'ECTOMORFO',
-      text: '',
+      text: 'Para entender um pouco mais sobre ele e sobre o seu treino, assita o vídeo abaixo!',
       count: 0,
-      video: 'https://www.youtube.com/watch?v=jfKfPfyJRdk'
+      video: 'https://youtu.be/YPvxkoxlAjE',
+      pdf: 'ECTMORFO.pdf'
     }
   ]);
 
@@ -126,7 +129,8 @@
       biotype: element.biotype, 
       text: element.text, 
       percentage: calcPercentage(element.count), 
-      video: element.video
+      video: element.video,
+      pdf: element.pdf,
     }));
 
     definedBiotype.value = getHighestPercent(biotypePercentage);

@@ -1,28 +1,42 @@
 <script setup>
   import YouTube from 'vue3-youtube';
 
-  defineProps({
+  const props = defineProps({
     biotype: {
       biotype: String,
       text: String,
       percentage: Number,
       video: String,
+      pdf: String,
     }
   });
+
+  const downloadPDF = () => {
+    const pdfPath = `/pdfs/${props.biotype.pdf}`; 
+
+    const urlPDF = new URL(pdfPath, import.meta.url).href;
+
+    const link = document.createElement('a');
+    
+    link.href = urlPDF;
+    link.download = props.biotype.pdf;
+    link.click();
+  }
+
 </script>
 
 <template>
-  <section>
-    <h1 class="final-title">
-        Você é
+  <section class="quiz-result">
+    <h1 class="quiz-result__title">
+      Parabéns!! Seu biotipo é:
     </h1>
 
     <div class="result-component">
       <div class="result-wrapper">
         <div class="biotype-wrapper">
-          <p class="first-biotype">
-            {{ biotype.biotype }}
-          </p>
+          <h3 class="first-biotype">
+            "{{ biotype.biotype }}"
+          </h3>
 
           <p class="biotype-text">
             {{ biotype.text }}
@@ -37,28 +51,18 @@
               Seu navegador não suporta o vídeo.
             </YouTube>
           </div>
+
+          <p class="biotype-text">
+            Baixe nosso material completo sobre o seu biotipo clicando no botão abaixo.
+          </p>
+
+          <button
+            class="download__button" 
+            @click="downloadPDF"
+          >
+            Download
+          </button>
         </div>
-      </div>
-
-      <div>
-        <p class="access-first-info">
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-        </p>
-
-        <a 
-          class="access-button" 
-          target="_blank"
-        >
-          Acessar
-        </a>
-
-        <p class="access-second-info">
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-        </p>
-
-        <p class="msg">
-          Lorem Ipsum!
-        </p>
       </div>
     </div>
   </section>
