@@ -9,19 +9,25 @@
       video: String,
     }
   });
+
+  const downloadPdf = () => {
+    const pdfUrl = '/caminho/do/seu/arquivo.pdf';
+      window.open(pdfUrl, '_blank');
+  }
+
 </script>
 
 <template>
   <section>
     <h1 class="final-title">
-        Você é
+      Parabéns!! Seu biotipo é:
     </h1>
 
     <div class="result-component">
       <div class="result-wrapper">
         <div class="biotype-wrapper">
           <p class="first-biotype">
-            {{ biotype.biotype }}
+            "{{ biotype.biotype }}"
           </p>
 
           <p class="biotype-text">
@@ -37,28 +43,8 @@
               Seu navegador não suporta o vídeo.
             </YouTube>
           </div>
+          <button class="download__button" @click="downloadPdf">Download</button>
         </div>
-      </div>
-
-      <div>
-        <p class="access-first-info">
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-        </p>
-
-        <a 
-          class="access-button" 
-          target="_blank"
-        >
-          Acessar
-        </a>
-
-        <p class="access-second-info">
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-        </p>
-
-        <p class="msg">
-          Lorem Ipsum!
-        </p>
       </div>
     </div>
   </section>

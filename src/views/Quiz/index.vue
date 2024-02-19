@@ -13,21 +13,21 @@
       biotype: 'ENDOMORFO',
       text: '',
       count: 0,
-      video: 'https://www.youtube.com/watch?v=jfKfPfyJRdk'
+      video: 'https://youtu.be/jXMfhRIeYh0'
     },
     {
       id: 1,
       biotype: 'MESOMORFO',
       text: '',
       count: 0,
-      video: 'https://www.youtube.com/watch?v=jfKfPfyJRdk'  
+      video: 'https://youtu.be/3yj277SjuKY'  
     },
     {
       id: 2,
       biotype: 'ECTOMORFO',
       text: '',
       count: 0,
-      video: 'https://www.youtube.com/watch?v=jfKfPfyJRdk'
+      video: 'https://youtu.be/YPvxkoxlAjE'
     }
   ]);
 
