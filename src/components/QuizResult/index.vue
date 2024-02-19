@@ -27,15 +27,15 @@
 
 <template>
   <section class="quiz-result">
-    <h1 class="quiz-result__title">
-      Parabéns!! Seu biotipo é:
-    </h1>
-
     <div class="result-component">
       <div class="result-wrapper">
         <div class="biotype-wrapper">
+          <h1 class="quiz-result__title">
+            Você é
+          </h1>
+
           <h3 class="first-biotype">
-            "{{ biotype.biotype }}"
+            {{ biotype.biotype }}!
           </h3>
 
           <p class="biotype-text">

@@ -1,6 +1,6 @@
 export const QUESTIONS = [
   {
-    question: 'Sua estrutura ossea é:',
+    question: 'Sua estrutura óssea é:',
     options: [
       {
       id: 0,
@@ -15,13 +15,13 @@ export const QUESTIONS = [
       {
         id: 3,
         biotype: 'ECTOMORFO',
-        option: 'PEQUENA e com aparencia frágil'
+        option: 'PEQUENA e com aparência frágil'
     }
     ],
     selected: null
   },
   {
-    question: 'O seu corpo possui uma tendencia natural a:',
+    question: 'O seu corpo possui uma tendência natural a:',
     options: [
       {
         id: 0,
@@ -31,7 +31,7 @@ export const QUESTIONS = [
       {
         id: 1,
         biotype: 'MESOMORFO',
-        option: 'Magro, porém com musculos visiveis '
+        option: 'Magro, porém com músculos visíveis '
       },
       {
         id: 2,
@@ -63,7 +63,7 @@ export const QUESTIONS = [
     selected: null
   },
   {
-    question: 'Na sua opiniao, seus braços e pernas são:',
+    question: 'Na sua opinião, seus braços e pernas são:',
     options: [
       {
         id: 0,
@@ -73,23 +73,23 @@ export const QUESTIONS = [
       {
         id: 1,
         biotype: 'MESOMORFO',
-        option: 'Possuem aspecto normal, com musculos visiveis'
+        option: 'Possuem aspecto normal, com músculos visíveis'
       },
       {
         id: 2,
         biotype: 'ECTOMORFO',
-        option: 'Longos e finos '
+        option: 'Longos e finos'
       }
     ],
     selected: null
   },
   {
-    question: 'Quando criança, voce era:',
+    question: 'Quando criança, você era:',
     options: [
       {
         id: 0,
         biotype: 'ENDOMORFO',
-        option: 'Gordinho / ganhava peso facil'
+        option: 'Gordinho / ganhava peso fácil'
       },
       {
         id: 1,
@@ -99,7 +99,7 @@ export const QUESTIONS = [
       {
         id: 2,
         biotype: 'ECTOMORFO',
-        option: 'Magrinho '
+        option: 'Magrinho'
       }
     ],
     selected: null
@@ -126,7 +126,7 @@ export const QUESTIONS = [
     selected: null
   },
   {
-    question: 'Sobre seu peso, voce:',
+    question: 'Sobre seu peso, você:',
     options: [
       {
         id: 0,
@@ -136,7 +136,7 @@ export const QUESTIONS = [
       {
         id: 1,
         biotype: 'MESOMORFO',
-        option: 'Ganha peso ou perde facilmente, mas geralmente se mantem num peso ideal'
+        option: 'Ganha peso ou perde facilmente, mas geralmente se mantêm num peso ideal'
       },
       {
         id: 2,
@@ -147,7 +147,7 @@ export const QUESTIONS = [
     selected: null
   },
   {
-    question: 'Sobre seu apetite, voce sente fome:',
+    question: 'Sobre seu apetite, você sente fome:',
     options: [
       {
         id: 0,
@@ -157,18 +157,18 @@ export const QUESTIONS = [
       {
         id: 1,
         biotype: 'MESOMORFO',
-        option: 'Apetite controlado, sinto mais fome nos horarios das refeiçoes'
+        option: 'Apetite controlado, sinto mais fome nos horários das refeições'
       },
       {
         id: 2,
         biotype: 'ECTOMORFO',
-        option: 'Nao sinto muita fome'
+        option: 'Não sinto muita fome'
       }
     ],
     selected: null
   },
   {
-    question: 'As pessoas falam que seu fisico aparenta:',
+    question: 'As pessoas falam que seu físico aparenta:',
     options: [
       {
         id: 0,
@@ -178,7 +178,7 @@ export const QUESTIONS = [
       {
         id: 1,
         biotype: 'MESOMORFO',
-        option: 'Normal, porte atlético, nao precisa nem ganhar ou baixar peso'
+        option: 'Normal, porte atlético, não precisa nem ganhar ou baixar peso'
       },
       {
         id: 2,
@@ -189,7 +189,7 @@ export const QUESTIONS = [
     selected: null
   },
   {
-    question: 'Que tamanho de camiseta voce usa',
+    question: 'Que tamanho de camiseta você usa',
     options: [
       {
         id: 0,
@@ -210,7 +210,7 @@ export const QUESTIONS = [
     selected: null
   },
   {
-    question: 'Quando voce compra roupas, geralmente elas ficam:',
+    question: 'Quando você compra roupas, geralmente elas ficam:',
     options: [
       {
         id: 0,
@@ -225,7 +225,7 @@ export const QUESTIONS = [
       {
         id: 2,
         biotype: 'ECTOMORFO',
-        option: ' Largas, principalmente nos braços'
+        option: 'Largas, principalmente nos braços'
       }
     ],
     selected: null
@@ -236,12 +236,12 @@ export const QUESTIONS = [
       {
         id: 0,
         biotype: 'ENDOMORFO',
-        option: 'Estou acima do peso, quero perder gordura e definir '
+        option: 'Estou acima do peso, quero perder gordura e definir'
       },
       {
         id: 1,
         biotype: 'MESOMORFO',
-        option: 'Estou num peso ideal, porem quero mais definiçao'
+        option: 'Estou num peso ideal, porêm quero mais definição'
       },
       {
         id: 2,

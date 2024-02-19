@@ -1,5 +1,5 @@
 .quiz-result__title {
-  margin: 10px 0 50px 0;
+  margin: 10px 0 10px 0;
   color: #fff;
   font-size: 3em;
   font-weight: bold;
@@ -10,17 +10,10 @@
   color: #C5A361; 
 }
 
-.result-component {
-  background-color: #D1C5B6;
-  border-radius: 0.5rem;
-  padding: 1.5rem;
-}
-
 .result-wrapper {
   background-color: #434242;
   border-radius: 0.5rem;
   padding: 20px 10px;
-  box-shadow: 0 0 20px #868584;
 }
 
 .biotype-wrapper {
@@ -36,7 +29,7 @@
 .first-biotype {
   color: #C5A361;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 2.5rem;
 }
 
 .first-biotype {
