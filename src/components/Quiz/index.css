@@ -24,6 +24,7 @@
 .question__title {
   color: #fff;
   font-size: 1.5rem;
+  font-weight: bold;
   line-height: 1.2;
   transition: all ease-in 0.2s;
 }
@@ -98,7 +99,7 @@
 
 .button__previous {
   float: left;
-  background-color: #EB3132;
+  background-color: #4F4F4F;
   color: #fff;
   font-weight: 400;
 }

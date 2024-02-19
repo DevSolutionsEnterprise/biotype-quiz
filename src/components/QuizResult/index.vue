@@ -1,34 +1,42 @@
 <script setup>
   import YouTube from 'vue3-youtube';
 
-  defineProps({
+  const props = defineProps({
     biotype: {
       biotype: String,
       text: String,
       percentage: Number,
       video: String,
+      pdf: String,
     }
   });
 
-  const downloadPdf = () => {
-    const pdfUrl = '/caminho/do/seu/arquivo.pdf';
-      window.open(pdfUrl, '_blank');
+  const downloadPDF = () => {
+    const pdfPath = `/pdfs/${props.biotype.pdf}`; 
+
+    const urlPDF = new URL(pdfPath, import.meta.url).href;
+
+    const link = document.createElement('a');
+    
+    link.href = urlPDF;
+    link.download = props.biotype.pdf;
+    link.click();
   }
 
 </script>
 
 <template>
-  <section>
-    <h1 class="final-title">
+  <section class="quiz-result">
+    <h1 class="quiz-result__title">
       Parabéns!! Seu biotipo é:
     </h1>
 
     <div class="result-component">
       <div class="result-wrapper">
         <div class="biotype-wrapper">
-          <p class="first-biotype">
+          <h3 class="first-biotype">
             "{{ biotype.biotype }}"
-          </p>
+          </h3>
 
           <p class="biotype-text">
             {{ biotype.text }}
@@ -43,7 +51,17 @@
               Seu navegador não suporta o vídeo.
             </YouTube>
           </div>
-          <button class="download__button" @click="downloadPdf">Download</button>
+
+          <p class="biotype-text">
+            Baixe nosso material completo sobre o seu biotipo clicando no botão abaixo.
+          </p>
+
+          <button
+            class="download__button" 
+            @click="downloadPDF"
+          >
+            Download
+          </button>
         </div>
       </div>
     </div>

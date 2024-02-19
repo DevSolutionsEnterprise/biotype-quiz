@@ -1,8 +1,8 @@
-.final-title {
-  font-weight: 500;
-  font-size: 3em;
-  color: #fff;
+.quiz-result__title {
   margin: 10px 0 50px 0;
+  color: #fff;
+  font-size: 3em;
+  font-weight: bold;
   text-align: center;
 }
 
@@ -27,19 +27,19 @@
   margin-bottom: 70px;
   text-align: center;
 }
+
 .biotype-wrapper-last {
   text-align: center;
   margin-bottom: 5px;
 }
 
-.first-biotype, .second-biotype, .third-biotype {
-  
-  font-weight: 600;
+.first-biotype {
   color: #C5A361;
+  font-weight: bold;
   margin-bottom: 10px;
 }
 
-.first-biotype, .second-biotype, .third-biotype {
+.first-biotype {
   font-size: 3em;
 }
 
@@ -50,8 +50,11 @@
 }
 
 .biotype-text {
+  max-width: 80%;
+  margin: 1.2rem auto 1.2rem;
   color: #DFC694;
   font-size: 1.5em;
+  line-height: 1.2;
 }
 
 .access-button {
@@ -120,12 +123,13 @@
   border-radius: 0.625rem;
   background-color: #000;
   color: #C89133;
-  border-color: #EB3132;
+  border: solid 1px #EB3132;
   font-size: 1rem;
   font-weight: 600;
   text-transform: uppercase;
   transition: all ease-in 0.2s;
   margin-top: 20px;
+  cursor: pointer;
 }
 
 .download__button:hover {

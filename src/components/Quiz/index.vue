@@ -51,15 +51,15 @@
   
     <div class="container-quiz">
       <div class="quiz__question">
-        <span class="question__title">
+        <h2 class="question__title">
           {{ question.question }}
-        </span>
+        </h2>
       </div>
   
       <div class="quiz__options">
         <label 
           v-for="(option, index) in question.options" 
-          :key="`${option.id}-${option.option}`"
+          :key="`${question.index}-${option.id}-${option.option}`"
           :class="`quiz__option ${
             question.selected === index
               ? '--selected'
