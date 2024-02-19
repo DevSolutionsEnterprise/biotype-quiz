@@ -53,7 +53,7 @@
           </div>
 
           <p class="biotype-text">
-            Baixe nosso material completo sobre o seu biotipo clicando no botão abaixo.
+            Abaixo pode baixar o seu treino específico para o seu biotipo.
           </p>
 
           <button

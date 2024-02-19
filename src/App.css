@@ -2,11 +2,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-image: url('./assets/images/background-main.png');
-  background-color: #252525;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  background-color: #000;
 }
 
 main {
@@ -22,10 +18,4 @@ main {
 
 footer {
   flex-shrink: 0;
-}
-
-@media screen and (min-width: 576px) { 
-  body {
-    background-image: none;
-  }
 }

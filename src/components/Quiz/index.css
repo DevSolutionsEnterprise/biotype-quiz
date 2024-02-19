@@ -44,12 +44,12 @@
 }
 
 .quiz__option:hover {
-  background-color: #C89133;
+  background-color: #EB3132;
   color: #fff;
 }
 
 .quiz__option.--selected{
-  background-color: #C89133;
+  background-color: #EB3132;
   color: #fff;
 }
 
@@ -73,7 +73,7 @@
   justify-content: center;
   align-items: center;
   padding-top: 1rem;
-  color: #D1C5B6;
+  color: #fff;
   font-size: 1rem;
   font-weight: 600;
   line-height: 1.2;
@@ -89,7 +89,6 @@
   width: 100%;
   padding: 0.7rem 1rem;
   border-radius: 0.625rem;
-  color: #000;
   font-size: 1.125rem;
   font-weight: 500;
   text-align: center;
@@ -106,7 +105,8 @@
 
 .button__next {
   align-self: flex-end;
-  background-color: #6DCA9D;
+  color: #fff;
+  background-color: #EB3132;
 }
 
 .button__previous:hover,

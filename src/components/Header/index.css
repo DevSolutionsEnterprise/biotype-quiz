@@ -1,31 +1,14 @@
-.container__header {
+.header__container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 4rem 0;
+  width: 90%;
+  margin: 4rem auto;
 }
 
-.header__title,
-.header__subtitle {
-  color: #fff;
-  font-size: 1.12rem;
-  font-weight: 400;
-  text-align: center;
-}
-
-.header__title {
-  font-weight: bold;
-}
-
-.header__line {
-  max-width: 12.5rem;
-  width: 100%;
-  margin: 0;
-  border: 0.1rem solid #C89133;
-  border-radius: 0.1rem;
-}
-
-.header__subtitle {
-  padding-top: 0.5rem;
+.header__image {
+  max-width: 396px;
+  width: 90%;
+  margin: 0 auto;
 }

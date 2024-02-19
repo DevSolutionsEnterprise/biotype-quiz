@@ -21,18 +21,10 @@
   text-align: center;
 }
 
-.biotype-wrapper-last {
-  text-align: center;
-  margin-bottom: 5px;
-}
-
 .first-biotype {
-  color: #C5A361;
+  color: #EB3132;
   font-weight: bold;
   margin-bottom: 2.5rem;
-}
-
-.first-biotype {
   font-size: 3em;
 }
 
@@ -45,56 +37,9 @@
 .biotype-text {
   max-width: 80%;
   margin: 1.2rem auto 1.2rem;
-  color: #DFC694;
+  color: #fff;
   font-size: 1.5em;
   line-height: 1.2;
-}
-
-.access-button {
-  appearance: none;
-  outline: none;
-  border: none;
-  cursor: pointer;
-
-  background-image: linear-gradient(to right, #C89133, #434242);
-  border-radius: 8px;
-  font-size: 1.3em;
-  font-weight: 500;
-  padding: 15px 55px;
-  color: #EB3132;
-  display: block;
-  margin: 0 auto;
-  text-align: center;
-  width: 200px;
-  text-decoration: none;
-}
-
-.access-button:hover {
-  opacity: 80%;
-}
-
-.access-first-info, .access-second-info {
-  text-align: center;
-  margin: 20px 0;
-}
-
-.access-first-info {
-  font-size: 2.5em;
-  color: #C89133;
-  margin-top: 50px;
-}
-
-.access-second-info {
-  color: #585858;
-  font-size: 1.5em;
-}
-
-.msg {
-  color: #C89133;
-  text-align: center;
-  font-weight: 700;
-  font-size: 4em;
-  margin: 20px 0; 
 }
 
 .download {
@@ -114,9 +59,8 @@
   padding: 1rem 4.5rem;
   margin: 0 auto;
   border-radius: 0.625rem;
-  background-color: #000;
-  color: #C89133;
-  border: solid 1px #EB3132;
+  color: #fff;
+  background-color: #EB3132;
   font-size: 1rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -130,7 +74,7 @@
 }
 
 @media screen and (max-width: 434px) {
-  .first-biotype, .second-biotype, .third-biotype {
+  .first-biotype {
     font-size: 2em;
   }
   
